@@ -3,7 +3,6 @@ from flask import (
     Blueprint,
     render_template,
 )
-from flask_wxapp import WXApp
 
 
 from routes.login import main as login_routes
@@ -13,11 +12,10 @@ from routes.user import main as user_routes
 # from routes.sell import main as sell_routes
 from routes.order import main as order_routes
 
-wxapp = WXApp()
 
 
 def create_app():
-
+    app = Flask(__name__)
     app.register_blueprint(login_routes, url_prefix='/login')
     app.register_blueprint(books_routes, url_prefix='/book')
     app.register_blueprint(user_routes, url_prefix='/user')
