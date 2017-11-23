@@ -1,5 +1,5 @@
 server {
-    listen 80;
+    listen 443;
     server_name admin.cupbholdit.com; # 改为绑定证书的域名
     ssl on;
     ssl_certificate 1_admin.cupbholdit.com_bundle.crt; # 改为自己申请得到的 crt 文件的名称
