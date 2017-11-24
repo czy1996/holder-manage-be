@@ -11,6 +11,8 @@ from routes.user import main as user_routes
 # from routes.cart import main as cart_routes
 # from routes.sell import main as sell_routes
 from routes.order import main as order_routes
+from routes.board import main as board_routes
+
 
 
 
@@ -22,6 +24,8 @@ def create_app():
     # app.register_blueprint(cart_routes, url_prefix='/cart')
     # app.register_blueprint(sell_routes, url_prefix='/sell')
     app.register_blueprint(order_routes, url_prefix='/order')
+    app.register_blueprint(board_routes, url_prefix='/board')
+
 
     return app
 

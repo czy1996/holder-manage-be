@@ -21,7 +21,7 @@ def get_orders():
     for order in l:
         r = []
         for id, q in order['items'].items():
-            log(id, q)
+            # log(id, q)
             title = Book.get(int(id)).title
             r.append({
                 'title': title,
