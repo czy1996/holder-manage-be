@@ -39,3 +39,16 @@ def update_orders():
     o = Order.get(order_id)
     o.update(data)
     return json_response(o.json())
+
+
+@main.route('/close', methods=['GET'])
+def close_orders():
+    order_id = int(request.args.get(id))
+    o = Order.get(order_id)
+    o.update({
+        'status': 'closed',
+    })
+    for bid, q in o['items'].items():
+        b = Book.get(int(bid))
+        b.decrease_one()
+    return json_response(o.json())
