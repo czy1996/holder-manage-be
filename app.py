@@ -4,7 +4,6 @@ from flask import (
     render_template,
 )
 
-
 from routes.login import main as login_routes
 from routes.books import main as books_routes
 from routes.user import main as user_routes
@@ -12,8 +11,6 @@ from routes.user import main as user_routes
 # from routes.sell import main as sell_routes
 from routes.order import main as order_routes
 from routes.board import main as board_routes
-
-
 
 
 def create_app():
@@ -25,7 +22,6 @@ def create_app():
     # app.register_blueprint(sell_routes, url_prefix='/sell')
     app.register_blueprint(order_routes, url_prefix='/order')
     app.register_blueprint(board_routes, url_prefix='/board')
-
 
     return app
 

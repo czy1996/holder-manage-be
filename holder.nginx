@@ -14,7 +14,7 @@ server {
     #        index  index.html index.htm;
     #    }
 
-    location / {
+    location /api {
         # 代理地址
         proxy_pass http://127.0.0.1:5050/;
         proxy_read_timeout 300;
